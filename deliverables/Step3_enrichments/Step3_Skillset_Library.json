@@ -1,0 +1,256 @@
+{
+    "@odata.context": "https://azurecognetivesearch-service.search.windows.net/$metadata#skillsets/$entity",
+    "@odata.etag": "\"0x8DBD551A2A92A47\"",
+    "name": "library-skillset",
+    "description": "Skillset created from the portal. skillsetName: library-skillset; contentField: merged_content; enrichmentGranularity: document; knowledgeStoreStorageAccount: ;",
+    "skills": [
+      {
+        "@odata.type": "#Microsoft.Skills.Text.V3.EntityRecognitionSkill",
+        "name": "#1",
+        "description": null,
+        "context": "/document/merged_content",
+        "categories": [
+          "PhoneNumber",
+          "Event",
+          "Address",
+          "DateTime",
+          "URL",
+          "Organization",
+          "IPAddress",
+          "Person",
+          "Product",
+          "Skill",
+          "PersonType",
+          "Email",
+          "Location",
+          "Quantity"
+        ],
+        "defaultLanguageCode": "en",
+        "minimumPrecision": null,
+        "modelVersion": null,
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/merged_content"
+          },
+          {
+            "name": "languageCode",
+            "source": "/document/language"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "persons",
+            "targetName": "people"
+          },
+          {
+            "name": "organizations",
+            "targetName": "organizations"
+          },
+          {
+            "name": "locations",
+            "targetName": "locations"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+        "name": "#2",
+        "description": null,
+        "context": "/document/merged_content",
+        "defaultLanguageCode": "en",
+        "maxKeyPhraseCount": null,
+        "modelVersion": null,
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/merged_content"
+          },
+          {
+            "name": "languageCode",
+            "source": "/document/language"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "keyPhrases",
+            "targetName": "keyphrases"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Text.LanguageDetectionSkill",
+        "name": "#3",
+        "description": null,
+        "context": "/document",
+        "defaultCountryHint": null,
+        "modelVersion": null,
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/merged_content"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "languageCode",
+            "targetName": "language"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Text.PIIDetectionSkill",
+        "name": "#4",
+        "description": null,
+        "context": "/document/merged_content",
+        "defaultLanguageCode": "en",
+        "minimumPrecision": 0.5,
+        "maskingMode": "replace",
+        "maskingCharacter": "*",
+        "modelVersion": null,
+        "piiCategories": [],
+        "domain": "none",
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/merged_content"
+          },
+          {
+            "name": "languageCode",
+            "source": "/document/language"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "piiEntities",
+            "targetName": "pii_entities"
+          },
+          {
+            "name": "maskedText",
+            "targetName": "masked_text"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Text.MergeSkill",
+        "name": "#5",
+        "description": null,
+        "context": "/document",
+        "insertPreTag": " ",
+        "insertPostTag": " ",
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/content"
+          },
+          {
+            "name": "itemsToInsert",
+            "source": "/document/normalized_images/*/text"
+          },
+          {
+            "name": "offsets",
+            "source": "/document/normalized_images/*/contentOffset"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "mergedText",
+            "targetName": "merged_content"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Vision.OcrSkill",
+        "name": "#6",
+        "description": null,
+        "context": "/document/normalized_images/*",
+        "textExtractionAlgorithm": null,
+        "lineEnding": "Space",
+        "defaultLanguageCode": "en",
+        "detectOrientation": true,
+        "inputs": [
+          {
+            "name": "image",
+            "source": "/document/normalized_images/*"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "text",
+            "targetName": "text"
+          },
+          {
+            "name": "layoutText",
+            "targetName": "layoutText"
+          }
+        ]
+      },
+      {
+        "@odata.type": "#Microsoft.Skills.Vision.ImageAnalysisSkill",
+        "name": "#7",
+        "description": null,
+        "context": "/document/normalized_images/*",
+        "defaultLanguageCode": "en",
+        "visualFeatures": [
+          "tags",
+          "description"
+        ],
+        "details": [],
+        "inputs": [
+          {
+            "name": "image",
+            "source": "/document/normalized_images/*"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "tags",
+            "targetName": "imageTags"
+          },
+          {
+            "name": "description",
+            "targetName": "imageCaption"
+          }
+        ]
+      },
+          {
+              "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+              "uri": "https://knwlgemining-springer-functionapp.azurewebsites.net/api/SpringerLookup?code=9_WoNBdyMjqxVfxh54I1icwSwpA2vZ8ryblOHd3wmib-AzFuJcgUVg==",
+              "httpMethod": "POST",
+              "timeout": "PT30S",
+              "batchSize": 10,
+              "degreeOfParallelism": 1,
+              "name": "SpringerLookup",
+              "description": "Extracts paper doi from springer",
+              "context": "/document",
+              "inputs": [
+                  {
+                      "name": "articleName",
+                      "source": "/document/metadata_title"
+                  }
+              ],
+              "outputs": [
+            {
+              "name": "publicationName",
+              "targetName": "publicationName"
+            },
+            {
+              "name": "publisher",
+              "targetName": "publisher"
+            },
+            {
+              "name": "doi",
+              "targetName": "doi"
+            },
+            {
+              "name": "publicationDate",
+              "targetName": "publicationDate"
+            }
+          ],
+          "httpHeaders": {}
+          }
+    ],
+    "cognitiveServices": null,
+    "knowledgeStore": null,
+    "encryptionKey": null
+  }

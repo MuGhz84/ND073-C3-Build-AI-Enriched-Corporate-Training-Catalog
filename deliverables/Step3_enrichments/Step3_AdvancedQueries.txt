@@ -1,0 +1,329 @@
+
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+#################################### QUERYING COURSE INDEX ###################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+###Query String - 1
+search=*&$select=instructor, entities, title, duration, source, role&$filter=instructor eq 'Mike Montoya'&$count=true&$top=7
+
+###Request URL
+https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=*&%24select=instructor%2C%20entities%2C%20title%2C%20duration%2C%20source%2C%20role&%24filter=instructor%20eq%20%27Mike%20Montoya%27&%24count=true&%24top=7
+
+###Results
+{
+  "@odata.context": "https://azurecognetivesearch-service.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "@odata.count": 3,
+  "value": [
+    {
+      "@search.score": 1,
+      "duration": "1",
+      "instructor": "Mike Montoya",
+      "role": "all",
+      "source": "Company Moodle",
+      "title": "Onboarding - Technology Policies",
+      "entities": "[{\"name\":\"Mike Montoya\",\"description\":\"Mike  is our HR trainer responsible for helping employees be successful in their careers at our company.  He has been with us for 3 years. Mike is an amateur chef and enjoys outdoor live music events.\",\"matches\":[{\"text\":\"mike montoya\",\"offset\":0,\"length\":12,\"matchDistance\":0.0}]}]"
+    },
+    {
+      "@search.score": 1,
+      "duration": "1",
+      "instructor": "Mike Montoya",
+      "role": "all",
+      "source": "Company Moodle",
+      "title": "Onboarding - Time Tracking",
+      "entities": "[{\"name\":\"Mike Montoya\",\"description\":\"Mike  is our HR trainer responsible for helping employees be successful in their careers at our company.  He has been with us for 3 years. Mike is an amateur chef and enjoys outdoor live music events.\",\"matches\":[{\"text\":\"mike montoya\",\"offset\":0,\"length\":12,\"matchDistance\":0.0}]}]"
+    },
+    {
+      "@search.score": 1,
+      "duration": "1",
+      "instructor": "Mike Montoya",
+      "role": "all",
+      "source": "Company Moodle",
+      "title": "Workplace Health",
+      "entities": "[{\"name\":\"Mike Montoya\",\"description\":\"Mike  is our HR trainer responsible for helping employees be successful in their careers at our company.  He has been with us for 3 years. Mike is an amateur chef and enjoys outdoor live music events.\",\"matches\":[{\"text\":\"mike montoya\",\"offset\":0,\"length\":12,\"matchDistance\":0.0}]}]"
+    }
+  ]
+}
+
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+###Query String - 2
+search=leaflet&$select=title, instructor, duration, source, role, entities&$count=true&$top=2 
+
+###Request URL
+https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=leaflet&%24select=title%2C%20instructor%2C%20duration%2C%20source%2C%20role%2C%20entities&%24count=true&%24top=2%20%20%20%20%20%20%20&%24filter=rating_average%20gt%204
+
+###Results
+{
+  "@odata.context": "https://azurecognetivesearch-service.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "@odata.count": 1,
+  "value": [
+    {
+      "@search.score": 23.306503,
+      "duration": "2",
+      "instructor": "Robert Gillis",
+      "role": "developer",
+      "source": "Company Moodle",
+      "title": "System.Byte[]",
+      "entities": "[{\"name\":\"Robert Gillis\",\"description\":\"Robert is our GIS specialist in charge of making beautiful maps for our users. He has been with the company for 8 years and enjoys hiking, fishing, and any other outdoor activity.\",\"matches\":[{\"text\":\"robert gillis\",\"offset\":0,\"length\":13,\"matchDistance\":0.0}]}]"
+    }
+  ]
+}
+
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+###Query String - 3
+search=*&$select=instructor, entities, title, duration, source, role&$filter=instructor ne null&$count=true&$top=7&$orderby=duration asc
+
+###Request URL
+https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=*&%24select=instructor%2C%20entities%2C%20title%2C%20duration%2C%20source%2C%20role&%24filter=instructor%20ne%20null&%24count=true&%24top=7&%24orderby=duration%20asc
+
+###Results
+{
+  "@odata.context": "https://azurecognetivesearch-service.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "@odata.count": 14,
+  "value": [
+    {
+      "@search.score": 1,
+      "duration": "1",
+      "instructor": "Mike Montoya",
+      "role": "all",
+      "source": "Company Moodle",
+      "title": "Onboarding - Technology Policies",
+      "entities": "[{\"name\":\"Mike Montoya\",\"description\":\"Mike  is our HR trainer responsible for helping employees be successful in their careers at our company.  He has been with us for 3 years. Mike is an amateur chef and enjoys outdoor live music events.\",\"matches\":[{\"text\":\"mike montoya\",\"offset\":0,\"length\":12,\"matchDistance\":0.0}]}]"
+    },
+    {
+      "@search.score": 1,
+      "duration": "1",
+      "instructor": "Mike Montoya",
+      "role": "all",
+      "source": "Company Moodle",
+      "title": "Onboarding - Time Tracking",
+      "entities": "[{\"name\":\"Mike Montoya\",\"description\":\"Mike  is our HR trainer responsible for helping employees be successful in their careers at our company.  He has been with us for 3 years. Mike is an amateur chef and enjoys outdoor live music events.\",\"matches\":[{\"text\":\"mike montoya\",\"offset\":0,\"length\":12,\"matchDistance\":0.0}]}]"
+    },
+    {
+      "@search.score": 1,
+      "duration": "1",
+      "instructor": "Eileen Diaz",
+      "role": "architect",
+      "source": "Company Moodle",
+      "title": "Ethics in AI",
+      "entities": "[{\"name\":\"Eileen Diaz\",\"description\":\"Eileen is our Senior Security Engineer responsible for application and service security. She has been with the company for 9 years and enjoys writing Sci-Fi in her spare time.\",\"matches\":[{\"text\":\"eileen diaz\",\"offset\":0,\"length\":11,\"matchDistance\":0.0}]}]"
+    },
+    {
+      "@search.score": 1,
+      "duration": "1",
+      "instructor": "Gerald Dominguez",
+      "role": "all",
+      "source": "Company Moodle",
+      "title": "Remote work",
+      "entities": "[{\"name\":\"Gerald Dominguez\",\"description\":\"Gerald is a Junior IT Administrator and has been with the company for 1 year. Gerald played NCAA soccer and is a part-time soccer coach on weekends. \",\"matches\":[{\"text\":\"gerald dominguez\",\"offset\":0,\"length\":16,\"matchDistance\":0.0}]}]"
+    },
+    {
+      "@search.score": 1,
+      "duration": "1",
+      "instructor": "Mike Montoya",
+      "role": "all",
+      "source": "Company Moodle",
+      "title": "Workplace Health",
+      "entities": "[{\"name\":\"Mike Montoya\",\"description\":\"Mike  is our HR trainer responsible for helping employees be successful in their careers at our company.  He has been with us for 3 years. Mike is an amateur chef and enjoys outdoor live music events.\",\"matches\":[{\"text\":\"mike montoya\",\"offset\":0,\"length\":12,\"matchDistance\":0.0}]}]"
+    },
+    {
+      "@search.score": 1,
+      "duration": "2",
+      "instructor": "Gerald Dominguez",
+      "role": "all",
+      "source": "Company Moodle",
+      "title": "System.Byte[]",
+      "entities": "[{\"name\":\"Gerald Dominguez\",\"description\":\"Gerald is a Junior IT Administrator and has been with the company for 1 year. Gerald played NCAA soccer and is a part-time soccer coach on weekends. \",\"matches\":[{\"text\":\"gerald dominguez\",\"offset\":0,\"length\":16,\"matchDistance\":0.0}]}]"
+    },
+    {
+      "@search.score": 1,
+      "duration": "2",
+      "instructor": "Eileen Diaz",
+      "role": "developer",
+      "source": "Company Moodle",
+      "title": "Security for database code",
+      "entities": "[{\"name\":\"Eileen Diaz\",\"description\":\"Eileen is our Senior Security Engineer responsible for application and service security. She has been with the company for 9 years and enjoys writing Sci-Fi in her spare time.\",\"matches\":[{\"text\":\"eileen diaz\",\"offset\":0,\"length\":11,\"matchDistance\":0.0}]}]"
+    }
+  ]
+}
+
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+#################################### QUERYING LIBRARY INDEX ##################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+
+
+
+
+
+###Query String - 4
+search=machine+learning&$select=doi,publisher, publicationName, publicationDate, locations&$count=true&$top=5&$count=true
+
+###Request URL
+https://azurecognetivesearch-service.search.windows.net/indexes/library-index/docs?api-version=2023-07-01-Preview&search=machine%2Blearning&%24select=doi%2Cpublisher%2C%20publicationName%2C%20publicationDate%2C%20locations&%24count=true&%24count=true&%24top=5
+
+###Results
+{
+  "@odata.context": "https://azurecognetivesearch-service.search.windows.net/indexes('library-index')/$metadata#docs(*)",
+  "@odata.count": 19,
+  "value": [
+    {
+      "@search.score": 7.4697075,
+      "locations": [
+        "Melbourne",
+        "Australia",
+        "Pervasive"
+      ],
+      "publicationName": "Journal of Big Data",
+      "publisher": "Springer",
+      "doi": "10.1186/s40537-019-0258-4",
+      "publicationDate": "2019-10-31"
+    },
+    {
+      "@search.score": 6.3414702,
+      "locations": [
+        "Shangrilla",
+        "Islamabad",
+        "Pakistan"
+      ],
+      "publicationName": "Complex Adaptive Systems Modeling",
+      "publisher": "Springer",
+      "doi": "10.1186/s40294-016-0016-9",
+      "publicationDate": "2016-02-03"
+    },
+    {
+      "@search.score": 4.858589,
+      "locations": [
+        "Xuchang",
+        "Henan",
+        "China",
+        "USA",
+        "quency",
+        "Gaussian pyramid",
+        "pyramids",
+        "tower",
+        "pyramid",
+        "neighborhood"
+      ],
+      "publicationName": "EURASIP Journal on Image and Video Processing",
+      "publisher": "Springer",
+      "doi": "10.1186/s13640-018-0373-8",
+      "publicationDate": "2018-11-27"
+    },
+    {
+      "@search.score": 2.7384014,
+      "locations": [
+        "Jinan",
+        "China",
+        "Beijing",
+        "Sydney",
+        "Australia",
+        "Pteðxtr",
+        "neighbour",
+        "Pnneig",
+        "districts",
+        "Guangdong"
+      ],
+      "publicationName": "Brain Informatics",
+      "publisher": "Springer",
+      "doi": "10.1007/s40708-015-0017-z",
+      "publicationDate": "2015-09-01"
+    },
+    {
+      "@search.score": 1.1823564,
+      "locations": [
+        "retail store",
+        "USA",
+        "TSINGHUA",
+        "neighborhood",
+        "Berlin"
+      ],
+      "publicationName": "",
+      "publisher": "",
+      "doi": "",
+      "publicationDate": ""
+    }
+  ]
+}
+
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+###Query String - 5
+search=data+science&$select=doi,publisher, publicationName, publicationDate&$filter=publicationDate gt '2019-01-01'&$count=true&$top=5
+
+###Request URL
+https://azurecognetivesearch-service.search.windows.net/indexes/library-index/docs?api-version=2023-07-01-Preview&search=data%2Bscience&%24select=doi%2Cpublisher%2C%20publicationName%2C%20publicationDate&%24filter=publicationDate%20gt%20%272019-01-01%27&%24count=true&%24top=5
+
+###Results
+{
+  "@odata.context": "https://azurecognetivesearch-service.search.windows.net/indexes('library-index')/$metadata#docs(*)",
+  "@odata.count": 9,
+  "value": [
+    {
+      "@search.score": 11.580084,
+      "publicationName": "Journal of Big Data",
+      "publisher": "Springer",
+      "doi": "10.1186/s40537-019-0210-7",
+      "publicationDate": "2019-06-06"
+    },
+    {
+      "@search.score": 10.729557,
+      "publicationName": "Journal of Big Data",
+      "publisher": "Springer",
+      "doi": "10.1186/s40537-019-0258-4",
+      "publicationDate": "2019-10-31"
+    },
+    {
+      "@search.score": 8.971621,
+      "publicationName": "Human-centric Computing and Information Sciences",
+      "publisher": "Springer",
+      "doi": "10.1186/s13673-019-0177-6",
+      "publicationDate": "2019-05-01"
+    },
+    {
+      "@search.score": 5.8402524,
+      "publicationName": "Applied Network Science",
+      "publisher": "Springer",
+      "doi": "10.1007/s41109-020-00330-x",
+      "publicationDate": "2020-11-16"
+    },
+    {
+      "@search.score": 5.6182737,
+      "publicationName": "Brain Informatics",
+      "publisher": "Springer",
+      "doi": "10.1186/s40708-020-00109-x",
+      "publicationDate": "2020-09-21"
+    }
+  ]
+}

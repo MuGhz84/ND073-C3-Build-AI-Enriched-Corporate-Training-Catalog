@@ -1,0 +1,36 @@
+{
+    "@odata.context": "https://azurecognetivesearch-service.search.windows.net/$metadata#indexers/$entity",
+    "@odata.etag": "\"0x8DBD541C765BDFD\"",
+    "name": "courses-indexer",
+    "description": "",
+    "dataSourceName": "courses-data",
+    "skillsetName": "courses-skillset",
+    "targetIndexName": "courses-index",
+    "disabled": null,
+    "schedule": null,
+    "parameters": {
+      "batchSize": null,
+      "maxFailedItems": 0,
+      "maxFailedItemsPerBatch": 0,
+      "base64EncodeKeys": null,
+      "configuration": {}
+    },
+    "fieldMappings": [
+      {
+        "sourceFieldName": "Key",
+        "targetFieldName": "Key",
+        "mappingFunction": {
+          "name": "base64Encode",
+          "parameters": null
+        }
+      }
+    ],
+    "outputFieldMappings": [
+      {
+        "sourceFieldName": "/document/description/keyphrases",
+        "targetFieldName": "keyphrases"
+      }
+    ],
+    "cache": null,
+    "encryptionKey": null
+  }

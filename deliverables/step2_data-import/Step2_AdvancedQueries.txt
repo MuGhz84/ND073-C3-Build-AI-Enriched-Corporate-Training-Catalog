@@ -1,0 +1,496 @@
+
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+#################################### QUERYING COURSE INDEX ###################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+###Query String - 1
+search=vision&$select=title, duration, source, role&$filter=rating_average gt 4&$count=true&$top=2
+
+###Request URL
+https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=vision&%24select=title%2C%20duration%2C%20source%2C%20role&%24filter=rating_average%20gt%204&%24count=true&%24top=2
+
+###Results
+{
+  "@odata.context": "https://azurecognetivesearch-service.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "@odata.count": 34,
+  "value": [
+    {
+      "@search.score": 13.401831,
+      "duration": "32",
+      "role": "student",
+      "source": "MS Learn",
+      "title": "Use AI to recognize objects in images by using the Custom Vision service"
+    },
+    {
+      "@search.score": 13.401831,
+      "duration": "32",
+      "role": "developer",
+      "source": "MS Learn",
+      "title": "Use AI to recognize objects in images by using the Custom Vision service"
+    }
+  ]
+}
+
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+###Query String - 2
+search=machine learning&$select=title, duration, source, role&$orderby=rating_average&$count=true&$top=2
+
+###Request URL
+https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=machine%20learning&%24select=title%2C%20duration%2C%20source%2C%20role&%24orderby=rating_average&%24count=true&%24top=2
+
+###Results
+{
+  "@odata.context": "https://azurecognetivesearch-service.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "@odata.count": 84,
+  "value": [
+    {
+      "@search.score": 22.70458,
+      "duration": "3 months",
+      "role": "Machine Learning Engineer",
+      "source": "Udacity",
+      "title": "Machine Learning Engineer for Microsoft Azure"
+    },
+    {
+      "@search.score": 13.113171,
+      "duration": "82",
+      "role": "developer",
+      "source": "MS Learn",
+      "title": "Build a Web App with Refreshable Machine Learning Models"
+    }
+  ]
+}
+
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+###Query String - 3
+search=*&$select=title,rating_average,instructor,role,level&$filter=instructor eq 'Mike Montoya'&$orderby=rating_average
+
+###Request URL
+https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=*&%24select=title%2Crating_average%2Cinstructor%2Crole%2Clevel&%24filter=instructor%20eq%20%27Mike%20Montoya%27&%24orderby=rating_average
+
+###Results
+{
+  "@odata.context": "https://azurecognetivesearch-service.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 1,
+      "instructor": "Mike Montoya",
+      "level": "System.Byte[]",
+      "rating_average": 4.6,
+      "role": "all",
+      "title": "Workplace Health"
+    },
+    {
+      "@search.score": 1,
+      "instructor": "Mike Montoya",
+      "level": "System.Byte[]",
+      "rating_average": 4.8,
+      "role": "all",
+      "title": "Onboarding - Time Tracking"
+    },
+    {
+      "@search.score": 1,
+      "instructor": "Mike Montoya",
+      "level": "System.Byte[]",
+      "rating_average": 4.9,
+      "role": "all",
+      "title": "Onboarding - Technology Policies"
+    }
+  ]
+}
+
+
+
+
+
+
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+#################################### QUERYING LIBRARY INDEX ##################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+
+
+
+
+
+###Query String - 4
+search="machine learning"+"Swinburne University"&$select=organizations, locations&$count=true&$top=2&$orderby=metadata_creation_date
+
+###Request URL
+https://azurecognetivesearch-service.search.windows.net/indexes/library-index/docs?api-version=2023-07-01-Preview&search=%22machine%20learning%22%2B%22Swinburne%20University%22&%24select=organizations%2C%20locations&%24count=true&%24top=2&%24orderby=metadata_creation_date
+
+###Results
+{
+  "@odata.context": "https://azurecognetivesearch-service.search.windows.net/indexes('library-index')/$metadata#docs(*)",
+  "@odata.count": 18,
+  "value": [
+    {
+      "@search.score": 0.5853406,
+      "organizations": [
+        "The Brazilian Computer Society",
+        "Instituto de Ciências Matemáticas e de Computação",
+        "ICMC",
+        "Universidade de São Paulo",
+        "USP",
+        "Instituto de Ciência e Tecnologia",
+        "ICT",
+        "Universidade Federal de São Paulo",
+        "UNIFESP",
+        "IEEE",
+        "Science Direct",
+        "ics",
+        "ACM Digital"
+      ],
+      "locations": [
+        "São Carlos",
+        "SP",
+        "Brazil",
+        "São José dos Campos",
+        "workstation",
+        "Mendeley",
+        "Library",
+        "university",
+        "pub",
+        "USA"
+      ]
+    },
+    {
+      "@search.score": 0.94701666,
+      "organizations": [
+        "School of Science",
+        "University of Science",
+        "Technology",
+        "Springer",
+        "ACOA",
+        "MAE",
+        "ximxim+1",
+        "SA",
+        "Metropolis"
+      ],
+      "locations": [
+        "Nanjing",
+        "China",
+        "nest",
+        "path",
+        "Metropolis"
+      ]
+    }
+  ]
+}
+
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+###Query String - 5
+search=Machine learning&$select=organizations,locations&$count=true&$top=20&$skip=10
+
+###Request URL
+https://azurecognetivesearch-service.search.windows.net/indexes/library-index/docs?api-version=2023-07-01-Preview&search=Machine%20learning&%24select=organizations%2Clocations&%24count=true&%24top=20&%24skip=10
+
+###Results
+{
+  "@odata.context": "https://azurecognetivesearch-service.search.windows.net/indexes('library-index')/$metadata#docs(*)",
+  "@odata.count": 19,
+  "value": [
+    {
+      "@search.score": 1.0127419,
+      "organizations": [
+        "School of Science",
+        "University of Science",
+        "Technology",
+        "Springer",
+        "ACOA",
+        "MAE",
+        "ximxim+1",
+        "SA",
+        "Metropolis"
+      ],
+      "locations": [
+        "Nanjing",
+        "China",
+        "nest",
+        "path",
+        "Metropolis"
+      ]
+    },
+    {
+      "@search.score": 0.9520472,
+      "organizations": [
+        "Alibaba",
+        "Ama",
+        "LBCNN",
+        "Commons",
+        "Changsha University",
+        "CNN",
+        "U11 U12",
+        "U21 U22",
+        "U2n",
+        "Amazon",
+        "LFM",
+        "Alibaba Group"
+      ],
+      "locations": [
+        "home",
+        "China",
+        "UI"
+      ]
+    },
+    {
+      "@search.score": 0.9201658,
+      "organizations": [
+        "Amazon",
+        "Flip",
+        "hospitals",
+        "Flip kart",
+        "Commons",
+        "Department",
+        "MLR Institute of Technology",
+        "Personal Bank",
+        "Hadoop Distrib",
+        "European Union",
+        "SQOOP",
+        "SMK",
+        "APSK",
+        "Department of Computer",
+        "and Engineering",
+        "Sri Venkateswara College of Engineering",
+        "Department of Computer Science and Engineering",
+        "JNTU Anantapur",
+        "JNTU",
+        "Hadoop",
+        "Springer Nature",
+        "Knowl Inf Syst",
+        "IEEE",
+        "J Am Stat Assoc",
+        "Palgrave Macmil",
+        "lan",
+        "Piscataway",
+        "ACM",
+        "SRI International",
+        "Springer",
+        "mapreduce",
+        "Trustcom",
+        "ICESS",
+        "IBM",
+        "TCS"
+      ],
+      "locations": [
+        "Hyderabad",
+        "India",
+        "hospitals",
+        "hospital",
+        "medical shop",
+        "bank",
+        "Lot",
+        "Tirupati",
+        "Andhra Pradesh",
+        "Anantapuramu",
+        "Anantapur",
+        "Data Lake",
+        "Flume",
+        "Cham",
+        "Newcastle",
+        "UK",
+        "New York",
+        "US"
+      ]
+    },
+    {
+      "@search.score": 0.88165855,
+      "organizations": [
+        "UK Parliament",
+        "McAfee",
+        "Commons",
+        "iveco",
+        "University",
+        "Google LLC",
+        "eBay",
+        "Mercari",
+        "Colladon",
+        "WSPi",
+        "Newman",
+        "CYPi",
+        "si/ki"
+      ],
+      "locations": [
+        "Buffalo",
+        "Buffalo, NY",
+        "USA",
+        "Ferrara",
+        "Japan",
+        "US",
+        "Yanchun",
+        "United States"
+      ]
+    },
+    {
+      "@search.score": 0.8520638,
+      "organizations": [
+        "Heinrich-Heine-University Düsseldorf",
+        "Deloitte",
+        "Google",
+        "IBM",
+        "SAP",
+        "Microsoft",
+        "Walker",
+        "Vodafone",
+        "Intel",
+        "Unilever",
+        "Ikea",
+        "Arrow",
+        "Amazon",
+        "HRM",
+        "Canhoto",
+        "Clear",
+        "Bozdag",
+        "EBSCO"
+      ],
+      "locations": [
+        "field",
+        "workplace",
+        "Danks",
+        "London"
+      ]
+    },
+    {
+      "@search.score": 0.8488546,
+      "organizations": [
+        "Caltech",
+        "Commons",
+        "SpringerPlus",
+        "Department of Information",
+        "Xavier Institute",
+        "ElAlami",
+        "MCMCM",
+        "GIST",
+        "Otsu",
+        "BoW",
+        "xloF.",
+        "stdev",
+        "DMSE"
+      ],
+      "locations": [
+        "Walia",
+        "Jharkhand",
+        "India",
+        "Dunham",
+        "Canberra"
+      ]
+    },
+    {
+      "@search.score": 0.67769647,
+      "organizations": [
+        "IEEE",
+        "ACM",
+        "SpringerLink",
+        "Elsevier",
+        "Commons",
+        "Department",
+        "Covenant University",
+        "NYMEX",
+        "Data Cooperation",
+        "IDC",
+        "ResearchGate",
+        "Apache Samza",
+        "CQELS",
+        "XSEQ",
+        "Flock",
+        "CodeBlue",
+        "Microsoft",
+        "KTS",
+        "Tag",
+        "clustering",
+        "CluStream",
+        "DenStream",
+        "ACluStream",
+        "FPSPAN"
+      ],
+      "locations": [
+        "Ota",
+        "Nigeria",
+        "stream",
+        "Splunk stream",
+        "Striim",
+        "SPADE"
+      ]
+    },
+    {
+      "@search.score": 0.5853406,
+      "organizations": [
+        "The Brazilian Computer Society",
+        "Instituto de Ciências Matemáticas e de Computação",
+        "ICMC",
+        "Universidade de São Paulo",
+        "USP",
+        "Instituto de Ciência e Tecnologia",
+        "ICT",
+        "Universidade Federal de São Paulo",
+        "UNIFESP",
+        "IEEE",
+        "Science Direct",
+        "ics",
+        "ACM Digital"
+      ],
+      "locations": [
+        "São Carlos",
+        "SP",
+        "Brazil",
+        "São José dos Campos",
+        "workstation",
+        "Mendeley",
+        "Library",
+        "university",
+        "pub",
+        "USA"
+      ]
+    },
+    {
+      "@search.score": 0.5853406,
+      "organizations": [
+        "University of Regensburg",
+        "eBay",
+        "Springer",
+        "Google",
+        "Amazon"
+      ],
+      "locations": [
+        "Regensburg",
+        "Germany",
+        "restaurant"
+      ]
+    }
+  ]
+}
+
+
+

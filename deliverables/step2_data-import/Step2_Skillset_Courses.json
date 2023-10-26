@@ -1,0 +1,36 @@
+{
+    "@odata.context": "https://azurecognetivesearch-service.search.windows.net/$metadata#skillsets/$entity",
+    "@odata.etag": "\"0x8DBD541B2125982\"",
+    "name": "courses-skillset",
+    "description": "Skillset created from the portal. skillsetName: courses-skillset; contentField: description; enrichmentGranularity: document; knowledgeStoreStorageAccount: ;",
+    "skills": [
+      {
+        "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+        "name": "#1",
+        "description": null,
+        "context": "/document/description",
+        "defaultLanguageCode": "en",
+        "maxKeyPhraseCount": null,
+        "modelVersion": null,
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/description"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "keyPhrases",
+            "targetName": "keyphrases"
+          }
+        ]
+      }
+    ],
+    "cognitiveServices": {
+      "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
+      "description": "/subscriptions/bbd88c04-f13a-44b7-a19f-bc2028b6d647/resourceGroups/knowledgemining-resourcegroup/providers/Microsoft.CognitiveServices/accounts/knwminin-azureaiservice",
+      "key": "8294a6df9887499d8388a0dc227dc8ab"
+    },
+    "knowledgeStore": null,
+    "encryptionKey": null
+  }
