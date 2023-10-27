@@ -78,11 +78,13 @@
                         Role: {{course.role}}
                     </div>
                     <div class="column is-2">
-                        Duration: {{course.duration}}
+                        Duration: {{course.duration}}<br/>
+						Product: {{course.source}}
                     </div>
                     <div class="column is-2">
                         Rating: {{course.rating_average}}<br/>
-                        Rating Count: {{course.rating_count}}
+                        Rating Count: {{course.rating_count}}<br/>
+						Instructor: {{course.instructor}}
                     </div>
                 </div>            
                 <hr/>
@@ -99,9 +101,9 @@
         serviceUrl is found in the Overview
     */
     const opts = {
-        headers: {'Content-Type': 'application/json', 'api-key':'<insert key here>'}
+        headers: {'Content-Type': 'application/json', 'api-key':'S9GnhIdd2lVvHmOaBYWPUknTtzQsRoumFyhNONRjzvAzSeBTcDoK'}
     }
-    const serviceUrl = 'https://<insert service name here>.search.windows.net'
+    const serviceUrl = 'https://azurecognetivesearch-service.search.windows.net'
     
     /* 
         This demo app uses Vue.js, a progressive framework for building user interfaces.  
@@ -157,7 +159,7 @@
                 return f;
             },
             baseUrl: function(){
-                return `${serviceUrl}/indexes/azuretable-index/docs?api-version=2020-06-30`
+                return `${serviceUrl}/indexes/courses-index/docs?api-version=2020-06-30`
             }
         }
     })

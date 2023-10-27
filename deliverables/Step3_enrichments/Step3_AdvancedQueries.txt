@@ -28,7 +28,7 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
   "value": [
     {
       "@search.score": 1,
-      "duration": "1",
+      "duration": 1,
       "instructor": "Mike Montoya",
       "role": "all",
       "source": "Company Moodle",
@@ -37,7 +37,7 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
     },
     {
       "@search.score": 1,
-      "duration": "1",
+      "duration": 1,
       "instructor": "Mike Montoya",
       "role": "all",
       "source": "Company Moodle",
@@ -46,7 +46,7 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
     },
     {
       "@search.score": 1,
-      "duration": "1",
+      "duration": 1,
       "instructor": "Mike Montoya",
       "role": "all",
       "source": "Company Moodle",
@@ -64,7 +64,7 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
 search=leaflet&$select=title, instructor, duration, source, role, entities&$count=true&$top=2 
 
 ###Request URL
-https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=leaflet&%24select=title%2C%20instructor%2C%20duration%2C%20source%2C%20role%2C%20entities&%24count=true&%24top=2%20%20%20%20%20%20%20&%24filter=rating_average%20gt%204
+https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/docs?api-version=2023-07-01-Preview&search=leaflet&%24select=title%2C%20instructor%2C%20duration%2C%20source%2C%20role%2C%20entities&%24count=true&%24top=2%20
 
 ###Results
 {
@@ -73,11 +73,11 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
   "value": [
     {
       "@search.score": 23.306503,
-      "duration": "2",
+      "duration": 2,
       "instructor": "Robert Gillis",
       "role": "developer",
       "source": "Company Moodle",
-      "title": "System.Byte[]",
+      "title": "Maps",
       "entities": "[{\"name\":\"Robert Gillis\",\"description\":\"Robert is our GIS specialist in charge of making beautiful maps for our users. He has been with the company for 8 years and enjoys hiking, fishing, and any other outdoor activity.\",\"matches\":[{\"text\":\"robert gillis\",\"offset\":0,\"length\":13,\"matchDistance\":0.0}]}]"
     }
   ]
@@ -100,7 +100,7 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
   "value": [
     {
       "@search.score": 1,
-      "duration": "1",
+      "duration": 1,
       "instructor": "Mike Montoya",
       "role": "all",
       "source": "Company Moodle",
@@ -109,7 +109,7 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
     },
     {
       "@search.score": 1,
-      "duration": "1",
+      "duration": 1,
       "instructor": "Mike Montoya",
       "role": "all",
       "source": "Company Moodle",
@@ -118,7 +118,7 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
     },
     {
       "@search.score": 1,
-      "duration": "1",
+      "duration": 1,
       "instructor": "Eileen Diaz",
       "role": "architect",
       "source": "Company Moodle",
@@ -127,7 +127,7 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
     },
     {
       "@search.score": 1,
-      "duration": "1",
+      "duration": 1,
       "instructor": "Gerald Dominguez",
       "role": "all",
       "source": "Company Moodle",
@@ -136,7 +136,7 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
     },
     {
       "@search.score": 1,
-      "duration": "1",
+      "duration": 1,
       "instructor": "Mike Montoya",
       "role": "all",
       "source": "Company Moodle",
@@ -145,16 +145,16 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
     },
     {
       "@search.score": 1,
-      "duration": "2",
+      "duration": 2,
       "instructor": "Gerald Dominguez",
       "role": "all",
       "source": "Company Moodle",
-      "title": "System.Byte[]",
+      "title": "O365",
       "entities": "[{\"name\":\"Gerald Dominguez\",\"description\":\"Gerald is a Junior IT Administrator and has been with the company for 1 year. Gerald played NCAA soccer and is a part-time soccer coach on weekends. \",\"matches\":[{\"text\":\"gerald dominguez\",\"offset\":0,\"length\":16,\"matchDistance\":0.0}]}]"
     },
     {
       "@search.score": 1,
-      "duration": "2",
+      "duration": 2,
       "instructor": "Eileen Diaz",
       "role": "developer",
       "source": "Company Moodle",

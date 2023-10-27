@@ -25,74 +25,74 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
 
 ###Results
 {
-    "@odata.context": "https://azurecognetivesearch-service.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
-    "@odata.count": 5,
-    "value": [
-      {
-        "@search.score": 17.433321,
-        "PartitionKey": "ms-learn",
-        "RowKey": "5244e529-28c6-4b6c-bba0-a3edcb956327",
-        "Key": "bXMtbGVhcm41MjQ0ZTUyOS0yOGM2LTRiNmMtYmJhMC1hM2VkY2I5NTYzMjc1",
-        "description": "Create a knowledge store with Azure Cognitive Search",
-        "duration": "46",
-        "instructor": null,
-        "level": "System.Byte[]",
-        "product": "azure-cognitive-search",
-        "rating_average": 4.79,
-        "rating_count": 42,
-        "role": "ai-engineer",
-        "source": "MS Learn",
-        "title": "Create a knowledge store with Azure Cognitive Search",
-        "url": "https://docs.microsoft.com/en-us/learn/modules/create-knowledge-store-azure-cognitive-search/?WT.mc_id=api_CatalogApi",
-        "keyphrases": [
-          "Azure Cognitive Search",
-          "knowledge store"
-        ]
-      },
-      {
-        "@search.score": 17.433321,
-        "PartitionKey": "ms-learn",
-        "RowKey": "c960fef1-1977-4b34-8f09-f00cbe326e34",
-        "Key": "bXMtbGVhcm5jOTYwZmVmMS0xOTc3LTRiMzQtOGYwOS1mMDBjYmUzMjZlMzQ1",
-        "description": "Create a knowledge store with Azure Cognitive Search",
-        "duration": "46",
-        "instructor": null,
-        "level": "System.Byte[]",
-        "product": "azure-cognitive-search",
-        "rating_average": 4.79,
-        "rating_count": 42,
-        "role": "developer",
-        "source": "MS Learn",
-        "title": "Create a knowledge store with Azure Cognitive Search",
-        "url": "https://docs.microsoft.com/en-us/learn/modules/create-knowledge-store-azure-cognitive-search/?WT.mc_id=api_CatalogApi",
-        "keyphrases": [
-          "Azure Cognitive Search",
-          "knowledge store"
-        ]
-      },
-      {
-        "@search.score": 17.433321,
-        "PartitionKey": "ms-learn",
-        "RowKey": "fac634ec-2700-4257-85c1-066454b639d4",
-        "Key": "bXMtbGVhcm5mYWM2MzRlYy0yNzAwLTQyNTctODVjMS0wNjY0NTRiNjM5ZDQ1",
-        "description": "Create a knowledge store with Azure Cognitive Search",
-        "duration": "46",
-        "instructor": null,
-        "level": "System.Byte[]",
-        "product": "azure-cognitive-search",
-        "rating_average": 4.79,
-        "rating_count": 42,
-        "role": "solution-architect",
-        "source": "MS Learn",
-        "title": "Create a knowledge store with Azure Cognitive Search",
-        "url": "https://docs.microsoft.com/en-us/learn/modules/create-knowledge-store-azure-cognitive-search/?WT.mc_id=api_CatalogApi",
-        "keyphrases": [
-          "Azure Cognitive Search",
-          "knowledge store"
-        ]
-      }
-    ]
-  }
+  "@odata.context": "https://azurecognetivesearch-service.search.windows.net/indexes('courses-index')/$metadata#docs(*)",
+  "@odata.count": 5,
+  "value": [
+    {
+      "@search.score": 17.433321,
+      "PartitionKey": "ms-learn",
+      "RowKey": "5244e529-28c6-4b6c-bba0-a3edcb956327",
+      "Key": "bXMtbGVhcm41MjQ0ZTUyOS0yOGM2LTRiNmMtYmJhMC1hM2VkY2I5NTYzMjc1",
+      "description": "Create a knowledge store with Azure Cognitive Search",
+      "duration": 46,
+      "instructor": null,
+      "level": "intermediate",
+      "product": "azure-cognitive-search",
+      "rating_average": 4.79,
+      "rating_count": 42,
+      "role": "ai-engineer",
+      "source": "MS Learn",
+      "title": "Create a knowledge store with Azure Cognitive Search",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/create-knowledge-store-azure-cognitive-search/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Azure Cognitive Search",
+        "knowledge store"
+      ]
+    },
+    {
+      "@search.score": 17.433321,
+      "PartitionKey": "ms-learn",
+      "RowKey": "c960fef1-1977-4b34-8f09-f00cbe326e34",
+      "Key": "bXMtbGVhcm5jOTYwZmVmMS0xOTc3LTRiMzQtOGYwOS1mMDBjYmUzMjZlMzQ1",
+      "description": "Create a knowledge store with Azure Cognitive Search",
+      "duration": 46,
+      "instructor": null,
+      "level": "intermediate",
+      "product": "azure-cognitive-search",
+      "rating_average": 4.79,
+      "rating_count": 42,
+      "role": "developer",
+      "source": "MS Learn",
+      "title": "Create a knowledge store with Azure Cognitive Search",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/create-knowledge-store-azure-cognitive-search/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Azure Cognitive Search",
+        "knowledge store"
+      ]
+    },
+    {
+      "@search.score": 17.433321,
+      "PartitionKey": "ms-learn",
+      "RowKey": "fac634ec-2700-4257-85c1-066454b639d4",
+      "Key": "bXMtbGVhcm5mYWM2MzRlYy0yNzAwLTQyNTctODVjMS0wNjY0NTRiNjM5ZDQ1",
+      "description": "Create a knowledge store with Azure Cognitive Search",
+      "duration": 46,
+      "instructor": null,
+      "level": "intermediate",
+      "product": "azure-cognitive-search",
+      "rating_average": 4.79,
+      "rating_count": 42,
+      "role": "solution-architect",
+      "source": "MS Learn",
+      "title": "Create a knowledge store with Azure Cognitive Search",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/create-knowledge-store-azure-cognitive-search/?WT.mc_id=api_CatalogApi",
+      "keyphrases": [
+        "Azure Cognitive Search",
+        "knowledge store"
+      ]
+    }
+  ]
+}
 
 
 

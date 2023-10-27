@@ -28,14 +28,14 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
   "value": [
     {
       "@search.score": 13.401831,
-      "duration": "32",
+      "duration": 32,
       "role": "student",
       "source": "MS Learn",
       "title": "Use AI to recognize objects in images by using the Custom Vision service"
     },
     {
       "@search.score": 13.401831,
-      "duration": "32",
+      "duration": 32,
       "role": "developer",
       "source": "MS Learn",
       "title": "Use AI to recognize objects in images by using the Custom Vision service"
@@ -60,14 +60,14 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
   "value": [
     {
       "@search.score": 22.70458,
-      "duration": "3 months",
+      "duration": 3,
       "role": "Machine Learning Engineer",
       "source": "Udacity",
       "title": "Machine Learning Engineer for Microsoft Azure"
     },
     {
       "@search.score": 13.113171,
-      "duration": "82",
+      "duration": 82,
       "role": "developer",
       "source": "MS Learn",
       "title": "Build a Web App with Refreshable Machine Learning Models"
@@ -92,7 +92,7 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
     {
       "@search.score": 1,
       "instructor": "Mike Montoya",
-      "level": "System.Byte[]",
+      "level": "beginner",
       "rating_average": 4.6,
       "role": "all",
       "title": "Workplace Health"
@@ -100,7 +100,7 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
     {
       "@search.score": 1,
       "instructor": "Mike Montoya",
-      "level": "System.Byte[]",
+      "level": "beginner",
       "rating_average": 4.8,
       "role": "all",
       "title": "Onboarding - Time Tracking"
@@ -108,7 +108,7 @@ https://azurecognetivesearch-service.search.windows.net/indexes/courses-index/do
     {
       "@search.score": 1,
       "instructor": "Mike Montoya",
-      "level": "System.Byte[]",
+      "level": "beginner",
       "rating_average": 4.9,
       "role": "all",
       "title": "Onboarding - Technology Policies"
